@@ -13,7 +13,6 @@
           "lifecycle": {
             "name": "metrics"
           },
-          "codec": "best_compression",
           "routing": {
             "allocation": {
               "include": {

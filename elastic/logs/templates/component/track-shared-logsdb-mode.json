@@ -6,7 +6,8 @@
             "mode": {{ index_mode | tojson }},
             "sort.field": [ "host.name", "@timestamp" ],
             "sort.order": [ "asc", "desc" ],
-            "sort.missing": ["_first", "_last"]
+            "sort.missing": ["_first", "_last"],
+            "routing_path": ["host.name"]
         }
         {% endif %}
       }

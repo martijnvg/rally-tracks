@@ -10,15 +10,14 @@
     {
       "set": {
         "field": "ecs.version",
-        "value": "8.5.1"
+        "value": "1.12.0"
       }
     },
     {
       "rename": {
         "field": "message",
         "target_field": "event.original",
-        "ignore_missing": true,
-        "if": "ctx.event?.original == null"
+        "ignore_missing": true
       }
     },
     {
@@ -36,20 +35,14 @@
     },
     {
       "pipeline": {
-        "name": "logs-postgresql.log-1.20.0-pipeline-log",
-        "if": "ctx.separator != ',' && ctx.separator != ':'"
+        "name": "logs-postgresql.log-1.2.0-pipeline-log",
+        "if": "ctx.separator != ','"
       }
     },
     {
       "pipeline": {
-        "name": "logs-postgresql.log-1.20.0-pipeline-csv",
+        "name": "logs-postgresql.log-1.2.0-pipeline-csv",
         "if": "ctx.separator == ','"
-      }
-    },
-    {
-      "pipeline": {
-        "name": "logs-postgresql.log-1.20.0-pipeline-aws-log",
-        "if": "ctx.separator == ':'"
       }
     },
     {
@@ -138,34 +131,6 @@
         "ignore_failure": true,
         "ignore_missing": true
       }
-    },
-    {
-      "pipeline": {
-        "name": "global@custom",
-        "ignore_missing_pipeline": true,
-        "description": "[Fleet] Global pipeline for all data streams"
-      }
-    },
-    {
-      "pipeline": {
-        "name": "logs@custom",
-        "ignore_missing_pipeline": true,
-        "description": "[Fleet] Pipeline for all data streams of type `logs`"
-      }
-    },
-    {
-      "pipeline": {
-        "name": "logs-postgresql.integration@custom",
-        "ignore_missing_pipeline": true,
-        "description": "[Fleet] Pipeline for all data streams of type `logs` defined by the `postgresql` integration"
-      }
-    },
-    {
-      "pipeline": {
-        "name": "logs-postgresql.log@custom",
-        "ignore_missing_pipeline": true,
-        "description": "[Fleet] Pipeline for the `postgresql.log` dataset"
-      }
     }
   ],
   "on_failure": [
@@ -175,12 +140,5 @@
         "value": "{{ _ingest.on_failure_message }}"
       }
     }
-  ],
-  "_meta": {
-    "managed_by": "fleet",
-    "managed": true,
-    "package": {
-      "name": "postgresql"
-    }
-  }
+  ]
 }

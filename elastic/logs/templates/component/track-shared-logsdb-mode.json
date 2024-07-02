@@ -6,6 +6,11 @@
             "mode": {{ index_mode | tojson }}
         }
         {% endif %}
+        {% if compression %}
+        "index": {
+            "codec": {{ compression | tojson }}
+        }
+        {% endif %}
       }
     }
   }

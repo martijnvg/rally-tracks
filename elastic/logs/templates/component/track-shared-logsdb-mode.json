@@ -7,7 +7,7 @@
             "sort.field": [ "host.name", "@timestamp" ],
             "sort.order": [ "asc", "desc" ],
             "sort.missing": ["_first", "_last"],
-            "routing_path": ["host.name"]
+            "routing_path": ["host.name", "log.file.path", "log.offset"]
         }
         {% endif %}
       }

@@ -1,12 +1,11 @@
 {
     "template": {
       "settings": {
-        "index": {
-          "codec": "default"
         {% if index_mode %}
-            ,"mode": {{ index_mode | tojson }}
-        {% endif %}
+        "index": {
+            "mode": {{ index_mode | tojson }}
         }
+        {% endif %}
       }
     }
   }

@@ -2,7 +2,7 @@
     "template": {
       "settings": {
         "index": {
-          "codec": "default"
+          "codec": "best_compression"
         {% if index_mode %}
             ,"mode": {{ index_mode | tojson }}
         {% endif %}

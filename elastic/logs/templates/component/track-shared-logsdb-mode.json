@@ -11,8 +11,11 @@
         {% endif %}
       },
       "mappings": {
+        "_size": {
+          "enabled": true
+        }
         {% if source_mode %}
-        "_source": {
+        ,"_source": {
           "mode": {{ source_mode | tojson }}
         }
         {% endif %}

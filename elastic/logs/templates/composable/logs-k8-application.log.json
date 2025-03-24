@@ -2006,8 +2006,7 @@
     "logs-mappings",
     "track-custom-shared-settings",
     "track-custom-mappings",
-    "track-data-stream-lifecycle",
-    "track-shared-logsdb-mode"
+    "track-data-stream-lifecycle"
   ],
   "priority": 200,
   "_meta": {

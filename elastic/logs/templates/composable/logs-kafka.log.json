@@ -25,8 +25,7 @@
       ".fleet_agent_id_verification-1",
       "track-custom-mappings",
       "track-custom-shared-settings",
-      "track-data-stream-lifecycle",
-      "track-shared-logsdb-mode"
+      "track-data-stream-lifecycle"
     ],
     "priority": 200,
     "_meta": {

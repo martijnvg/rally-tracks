@@ -13,8 +13,8 @@
             "ignore_malformed": "true"
           },
           "sort": {
-            "field": ["resource.attributes.log.file.path", "resource.attributes.host.name", "@timestamp"],
-            "order": ["asc", "asc", "desc"]
+            "field": ["resource.attributes.host.name", "@timestamp"],
+            "order": ["asc", "desc"]
           }
         }
       },
